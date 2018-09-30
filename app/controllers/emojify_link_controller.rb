@@ -8,7 +8,6 @@ class EmojifyLinkController < ApplicationController
   # POST
   def add
     # params should be set
-    binding.pry
     @site = Website.new(site_params)
     if @site.save
       # handle it

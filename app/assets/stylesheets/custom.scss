@@ -1,0 +1,95 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$primary: #E81C4F;
+$white: #FFFFFF;
+$black: #000000;
+$silver: #DDDDDD;
+$silver-light: #F5F7F9;
+$text-color: #566B78;
+$pre-border: #6699CC;
+
+// GC 2
+$gc-grey: #C2C2C0;
+$gc-dark-purple: #505388;
+$gc-light-purple: #B3B6D9;
+$gc-black: #010101;
+$gc-gray: #92929A;
+$gc-purple: #6549C2;
+
+// Mixins
+@mixin linear-gradient($angle, $gradient1, $gradient2) {
+  background-color: $gradient2; /* Fallback Color */
+  background-image: -webkit-gradient(linear, $angle, from($gradient1), to($gradient2)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient($angle, $gradient1, $gradient2); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient($angle, $gradient1, $gradient2); /* FF3.6 */
+  background-image:     -ms-linear-gradient($angle, $gradient1, $gradient2); /* IE10 */
+  background-image:      -o-linear-gradient($angle, $gradient1, $gradient2); /* Opera 11.10+ */
+  background-image:         linear-gradient($angle, $gradient1, $gradient2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#{$gradient1}', EndColorStr='#{$gradient2}');
+}
+
+html, body {
+  color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  font-family: 'Inconsolata', monospace;
+  font-size: 18px;
+  line-height: 1.5;
+  background-color: $gc-purple;
+  @include linear-gradient(90deg, $gc-purple, $gc-gray);
+}
+section {
+    width: 100%;
+    min-height: 80%;
+    display:table;
+    height:80%;
+}
+.row {
+    width: 100%;
+    height: 100%;
+    display:table-row;
+}
+.col-mid-8 {
+    width: 70%;
+    display: table-cell;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+}
+
+.col-mid-2 {
+  width:15%;
+  display: table-cell;
+    vertical-align: middle;
+
+}
+
+.content {
+  vertical-align: -40%;
+}
+
+header, footer {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+}
+
+.emoji-title {
+  font-size: 200%; 
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  h1 {
+    display:inline;
+  font-size: 200%; 
+  }
+}
+
+#website_url {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}

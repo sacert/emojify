@@ -1,10 +1,30 @@
-<h1>Sample App</h1>
-<%= form_for(@site, url: emojify_link_add_path(@site)) do |f| %>
-  <%= f.label :url %>
-  <%= f.url_field :url %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#website_blot").emojioneArea();
+  });
+</script>
 
-  <%= f.label :blot %>
-  <%= f.text_field :blot %>
 
-  <%= f.submit "Emoji It", class: "btn btn-primary" %>
-<% end %>
+<section>
+    <div class="row">
+      <div class="col-md-2"></div>
+        <div class="col-mid-8">
+          <div class="content">
+            <div class="emoji-title">  
+              <h1>💣❗</h1>
+            </div>
+              <%= form_for(@site, url: emojify_link_add_path(@site), :class => 'emoji-picker-container') do |f| %>
+                <%= f.label :url %>
+                <%= f.url_field :url %>
+
+                <%= f.label :blot %>
+                <%= f.text_field :blot, :data => { :emojiable => 'true' } %>
+
+                <%= f.submit "Emoji It", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-mid-2"></div>
+        </div>
+    </div>
+</section>
